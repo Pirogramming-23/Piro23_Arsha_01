@@ -17,58 +17,77 @@ body {
 }
 
 .section p {
-  text-align: center;
+  text-align:left;
   max-width: 600px;
   margin: 0 auto 40px auto;
   color: #666;
 }
 
 /* Services Section */
-
-*, ::after, ::before {
-    box-sizing: border-box;
+.light-background {
+    --background-color: #f5f6f8;
+    --surface-color: #650c0c;
 }
+
+
+section, .section {
+    color: #444444;
+    background-color: #f5f6f8;
+    padding: 60px 0;
+    scroll-margin-top: 88px;
+    overflow: clip;
+}
+
+/* *, ::after, ::before {
+    box-sizing: border-box;
+} */
 .section-title h2 {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 1000;
   margin-bottom: 20px;
   padding-bottom: 20px;
   text-transform: uppercase;
-  color: var(#37517e);
+  color:#37517e;
   line-height: 1.2;
 
 }
-.section-title h2:before {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 160px;
-    height: 1px;
-    background: color-mix(in srgb, #444444, transparent 60%);
-    left: 0;
-    right: 0;
-    bottom: 1px;
-    margin: auto;
+
+.section-title h2 {
+  position: relative; /* 기준 요소 설정 */
+}
+
+.section-title h2::before {
+  content: "";
+  position: absolute; /* h2 기준 위치 */
+  display: block;
+  width: 160px;
+  height: 1px;
+  background: color-mix(in srgb, #444444, transparent 60%);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1px; /* after보다 살짝 위에 배치 */
+  z-index: 0; /* 뒤에 깔리도록 */
 }
 
 .section-title h2::after {
-    content: "";
-    position: absolute;
-    display: block;
-    width: 60px;
-    height: 3px;
-    background: var(--accent-color);
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--accent-color);
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0; /* h2 기준 아래 */
+  z-index: 1; /* 앞에 나오도록 */
 }
+
 .services {
-  background-color: #f9f9f9;
+  /* background-color: #ced4da; */
 }
 
 .service-item {
-  background: #fff;
+  background: #e9ecef;
   border-radius: 10px;
   padding: 30px;
   text-align: center;
@@ -87,8 +106,9 @@ body {
 }
 
 .service-item h4 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 20px;
 }
 
 .service-item p {
@@ -189,6 +209,8 @@ body {
 body {
   margin: 0;
   padding: 0;
+  line-height: 1.6;
+  color: #333;
   font-family: sans-serif;
   line-height: 1.6;
 }
@@ -207,10 +229,7 @@ body {
   margin-bottom: 40px;
 }
 
-.section-title h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
+
 
 .section-title p {
   color: #555;
@@ -254,11 +273,11 @@ body {
 }
 
 .card {
-  background-color: #fff;
-  border: 1px solid #ddd;  
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  width: 18rem;               /* 고정 가로 크기 */
+  background-color: #f5f6f8; 
+  padding: 0px 12px;
+  box-shadow: 0 15px 15px #adb5bd; /* 그림자 효과 */
+  width: 23rem;
+  margin: 16px;               /* 고정 가로 크기 */
   position: relative;
   transition: transform 0.2s ease;
 }
@@ -272,14 +291,44 @@ body {
   margin-bottom: 0.8rem;
 }
 
-.card-title {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
+.card:hover .card-title {
+  color:#0d6efd;           /* 파란색으로 변경 */
+  transform: scale(1.05);   /* 약간 확대 */
+  transition: all 0.3s ease;
 }
+
+
+.card-title {
+  font-size: 1.4rem;
+  margin-bottom: 0rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
 
 .card-text {
   font-size: 0.95rem;
-  color: #555;
+  color: #d11f03c3;
+}
+
+:root {
+  --accent-color: #007bff; 
+  --default-color: #444444;
+  --heading-color: #37517e;
+  --accent-color: #47b2e4;/* 기본 강조 색상 */
+}
+.services .service-item h4 a {
+    color: var(--heading-color);
+    transition: ease-in-out 0.3s;
+}
+.stretched-link::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: "";
 }
 
 .stretched-link {
@@ -288,7 +337,6 @@ body {
   z-index: 1;
   text-indent: -9999px;
 }
-
 
 
 /* 반응형 (작은 화면에서 세로로) */
@@ -314,7 +362,6 @@ body {
 
 #work-process .col-lg-4 {
   flex: 1 1 calc(33.333% - 20px); /* 3등분 */
-  box-sizing: border-box;
   background: #ffffff;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
@@ -440,5 +487,4 @@ body {
 .cta-btn:hover {
   background-color: #0056b3;
 }
-
 
