@@ -418,7 +418,6 @@ li {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-  max-width: 1140px;
   height: 540.59px;
   margin: 0 auto;
   padding: 0 1rem;
@@ -525,13 +524,16 @@ li {
 }
 
 .section-testimonials .section-title h2 {
-  font-size: 32px;
-  font-weight: 700;
-  text-transform: uppercase;
-  position: relative;
-  color: var(--heading-color);
-  margin-bottom: 10px;
+
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    color: var(--heading-color);
 }
+
 
 .section-testimonials .section-title h2::before,
 .section-testimonials .section-title h2::after {
@@ -565,7 +567,6 @@ li {
 }
 
 .testimonial-item {
-  max-width: 700px;
   margin: 0 auto;
   background: var(--bs-white);
   padding: 40px 30px;
