@@ -382,16 +382,63 @@ h1, h2, h3, h4, h5, h6 {
 /* 닫기 영역 */
 .lightbox .close {
     position: absolute;
-    top: 20px;
+    top: 15px;
     right: 30px;
-    width: 30px;
-    height: 30px;
-    background: white;
+    width: 35px;
+    height: 35px;
+    /* background-color: rgba(0, 0, 0, .32); */
     border-radius: 50%;
     text-decoration: none;
     z-index: 1000;
 }
+.lightbox .close svg{
+    display: block;
+}
+.lightbox .close svg path{
+    fill: #aaa;
+}
+.lightbox .close:hover svg path{
+    fill: white;
+}
 
+.lightbox-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* prev button & next button */
+.slide-nav{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    z-index: 99999;
+}
+.slide-nav svg{
+    display: block;
+}
+.slide-nav:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 위치 조정 */
+.slide-nav.prev {
+    left: 20px;
+}
+
+.slide-nav.next {
+    right: 20px;
+}
 .gdesc-inner {
     background: #fff;
     width: 100%;
