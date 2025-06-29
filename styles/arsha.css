@@ -116,6 +116,12 @@
     --bs-form-valid-border-color: #198754;
     --bs-form-invalid-color: #dc3545;
     --bs-form-invalid-border-color: #dc3545;
+    --background-color: #ffffff;
+    --default-color: #444444;
+    --heading-color: #37517e;
+    --accent-color: #47b2e4;
+    --surface-color: #ffffff;
+    --contrast-color: #ffffff;
 }
 *,::after,::before{
     box-sizing:border-box}
@@ -125,7 +131,7 @@ body,html{
 
 body{margin:0;
     overflow:hidden;
-    background:#000 url(../img/demo-bg.jpg) 0 0 repeat;
+    /* background:#000 url(../img/demo-bg.jpg) 0 0 repeat; */
     position:relative;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
 
@@ -138,3 +144,64 @@ body{margin:0;
     background:#023b6d;
     display:flex;
     align-items:center}
+
+section, .section{
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 88px;
+    overflow: clip;}
+.container{
+        --bs-gutter-x: 1.5rem;
+        column-gap: 1.5rem;
+        row-gap: 0;
+        width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        padding-left: calc(var(--bs-gutter-x) * .5);
+        margin-right: auto;
+        margin-left: auto;
+    }
+h1, h2, h3, h4, h5, h6 {
+        color: var(--heading-color);
+        font-family: var(--heading-font);
+    }
+    
+.section-title{
+        text-align: center;
+        padding-bottom: 60px;
+        position: relative;
+    }
+
+.section-title h2{
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+.section-title h2::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: 
+    color-mix(in srgb, var(--default-color), transparent 60%);
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
+}
+.section-title h2::after{
+        content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
