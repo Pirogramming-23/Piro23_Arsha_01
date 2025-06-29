@@ -134,8 +134,12 @@ body{margin:0;
     overflow-y: auto;
     /* background:#000 url(../img/demo-bg.jpg) 0 0 repeat; */
     position:relative;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
-
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    scroll-behavior: smooth;
+}
+body:has(.lightbox:target){
+    overflow: hidden;
+}
 #header{
     position:absolute;
     left:0;
@@ -221,20 +225,20 @@ h1, h2, h3, h4, h5, h6 {
 #filter-app:checked ~ .filter-wrapper label[for="filter-app"],
 #filter-card:checked ~ .filter-wrapper label[for="filter-card"],
 #filter-web:checked ~ .filter-wrapper label[for="filter-web"] {
-  background: #3db5ec;
-  color: #fff;
+    background: #3db5ec;
+    color: #fff;
 }
 
 
 #filter-all:checked ~ .masonry-container .masonry-item {
-  display: block;
+    display: block;
 }
 
 /* App만 보이게 */
 #filter-app:checked ~ .masonry-container .masonry-item:not(.app),
 #filter-card:checked ~ .masonry-container .masonry-item:not(.card),
 #filter-web:checked ~ .masonry-container .masonry-item:not(.web) {
-  display: none;
+    display: none;
 }
 .filter-wrapper{
     width: 100%;
@@ -242,16 +246,16 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     margin: 2rem 0;
 }
-    .filter-buttons {
+.filter-buttons {
     display: flex;
     gap: 1rem;
     justify-content: center;
     margin-bottom: 1rem;
     }
-    .filter-buttons input[type="radio"] {
+.filter-buttons input[type="radio"] {
     display: none;
     }
-    .filter-buttons label {
+.filter-buttons label {
     cursor: pointer;
     padding: 6px 16px;
     border-radius: 20px;
@@ -324,14 +328,85 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
 }
 .masonry-item {
-  display: block;
+    display: block;
+}
+
+.zoom{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.gallery img {
+    width: 200px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* 라이트박스 스타일 */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    /* overflow-y: auto; */
+    flex-direction: column;
 }
 
 
+.lightbox img {
+    max-height: 95vh;
+    max-width: 100%;
+    /* border-radius: 8px; */
+    display: block;
+}
 
+/* :target으로 열림 처리 */
+.lightbox:target {
+    display: flex;    
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
 
-.zoom{
-    font-size: 2rem;
+/* 닫기 영역 */
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border-radius: 50%;
+    text-decoration: none;
+    z-index: 1000;
+}
+
+.gdesc-inner {
+    background: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: left;
+    font-family: sans-serif;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.gslide-title {
+    font-size: 1rem;
+    color: #111;
+    margin: 0;
+    line-height: 1.5;
 }
 .link{
     font-size: 2rem;
