@@ -130,7 +130,8 @@ body,html{
     height:100%}
 
 body{margin:0;
-    overflow:hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     /* background:#000 url(../img/demo-bg.jpg) 0 0 repeat; */
     position:relative;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"}
@@ -213,25 +214,142 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-.filter-list{
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-}
-.filter-list li {
-    padding: 0.5rem 1.2rem;
-    border-radius: 50px;
-    background-color: transparent;
-    color: #333;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+
+/* All일 때 모두 보임 */
+
+#filter-all:checked ~ .filter-wrapper label[for="filter-all"],
+#filter-app:checked ~ .filter-wrapper label[for="filter-app"],
+#filter-card:checked ~ .filter-wrapper label[for="filter-card"],
+#filter-web:checked ~ .filter-wrapper label[for="filter-web"] {
+  background: #3db5ec;
+  color: #fff;
 }
 
-.filter-list li.active {
-    background-color: #3dbff2;
-    color: white;
+
+#filter-all:checked ~ .masonry-container .masonry-item {
+  display: block;
+}
+
+/* App만 보이게 */
+#filter-app:checked ~ .masonry-container .masonry-item:not(.app),
+#filter-card:checked ~ .masonry-container .masonry-item:not(.card),
+#filter-web:checked ~ .masonry-container .masonry-item:not(.web) {
+  display: none;
+}
+.filter-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+    .filter-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+    }
+    .filter-buttons input[type="radio"] {
+    display: none;
+    }
+    .filter-buttons label {
+    cursor: pointer;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: transparent;
+    }
+    .filter-buttons input[type="radio"]:checked + label {
+    background: #3db5ec;
+    color: #fff;
+    }
+
+.masonry-container{
+    column-count: 3;
+    column-gap: 1.5rem;
+    margin: 0 30px 0 30px;
+}
+.masonry-item{
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    /* border-radius: 8px; */
+    overflow: hidden;
+    /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.masonry-item .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9); /* 흰 배경에 살짝 투명 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.masonry-item:hover .info{
+    opacity: 1;
+}
+
+.masonry-item .text h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.masonry-item .text p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.masonry-item.icons{
+    display: flex;
+    gap: 20px;
+}
+.masonry-item .icons a{
+    margin-left: 0.5rem;
+    color: #333;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.masonry-item {
+  display: block;
+}
+
+
+
+
+.zoom{
+    font-size: 2rem;
+}
+.link{
+    font-size: 2rem;
+}
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
 }

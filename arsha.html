@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/arsha.css">
+    <!-- Bootstrap Icons CDN 추가 (HEAD에 넣기) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     <title>Arsha Bootstrap Template Demo</title>
 </head>
 <body>
@@ -21,13 +24,177 @@
                 </p>
             </div>
             <!-- title-end -->
-            <div class="container">
-                <ul class="filter-list">
-                    <li class="active">All</li>
-                    <li>App</li>
-                    <li>Card</li>
-                    <li>Web</li>
-                </ul>
+                <!-- 필터 라디오 버튼 (눈에 안 보이게 처리) -->
+                    <input type="radio" name="filter" id="filter-all" checked hidden>
+                    <input type="radio" name="filter" id="filter-app" hidden>
+                    <input type="radio" name="filter" id="filter-card" hidden>
+                    <input type="radio" name="filter" id="filter-web" hidden>
+
+                    <!-- 필터 버튼 UI -->
+                    <div class="filter-wrapper">
+                    <div class="filter-buttons">
+                        <label for="filter-all">All</label>
+                        <label for="filter-app">App</label>
+                        <label for="filter-card">Card</label>
+                        <label for="filter-web">Web</label>
+                    </div>
+                    </div>
+
+            <!-- 여기서 부터 지옥 시작 -->
+            <div class="masonry-container">
+
+                    <div class="masonry-item app">
+                        <img src="./assets/cactus.png" alt="App 1">
+                            <div class="info">
+                                <div class="text">
+                                <h4>App 1</h4>
+                                <p>Lorem ipsum, dolor sit</p>
+                                </div>
+
+                                <a href="assets/img/portfolio/portfolio-portrait-1.webp" 
+                                   title="App 1" data-gallery="portfolio-gallery-app"
+                                   class="glightbox preview-link">
+                                    <i class="bi bi-zoom-in"></i></a>
+
+                                <a href="#" class="zoom">
+                                    <i class="bi bi-zoom-in"></i>
+                                </a>
+                                <a href="#" class="link">
+                                    <i class="bi bi-link-45deg"></i>
+                                </a>
+                            </div>
+                        </div>
+
+
+                    <div class="masonry-item web">
+                        <img src="./assets/glowpen.png" calt="Web 1">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Web 1</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <a href="#" class="zoom">
+                            <i class="bi bi-zoom-in"></i>
+                            </a>
+                            <a href="#" class="link">
+                            <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
+                        </div>
+
+                        <div class="masonry-item card">
+                        <img src="./assets/serum.png" alt="Card 1">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Card 1</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <a href="#" class="zoom">
+                            <i class="bi bi-zoom-in"></i>
+                            </a>
+                            <a href="#" class="link">
+                            <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
+                        </div>
+
+                        <div class="masonry-item app">
+                        <img src="./assets/pencollection.png" alt="App 2">
+                        <div class="info">
+                            <div class="text">
+                            <h4>App 2</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <a href="#" class="zoom">
+                            <i class="bi bi-zoom-in"></i>
+                            </a>
+                            <a href="#" class="link">
+                            <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
+                        </div>
+
+                        <div class="masonry-item app">
+                        <img src="./assets/tread.png" alt="App 3">
+                        <div class="info">
+                            <div class="text">
+                            <h4>App 3</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <a href="#" class="zoom">
+                            <i class="bi bi-zoom-in"></i>
+                            </a>
+                            <a href="#" class="link">
+                            <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
+                        </div>
+
+                        <div class="masonry-item web">
+                        <img src="./assets/littleblackbook.png" alt="Web 2">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Web 2</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <a href="#" class="zoom">
+                            <i class="bi bi-zoom-in"></i>
+                            </a>
+                            <a href="#" class="link">
+                            <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
+                        </div>
+
+
+                    <div class="masonry-item web">
+                        <img src="./assets/paint.png" alt="Web 3">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Web 3</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <a href="#" class="zoom">
+                            <i class="bi bi-zoom-in"></i>
+                            </a>
+                            <a href="#" class="link">
+                            <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
+                        </div>
+
+                        <div class="masonry-item card">
+                        <img src="./assets/paintbrush.png" alt="Card 2">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Card 2</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <a href="#" class="zoom">
+                            <i class="bi bi-zoom-in"></i>
+                            </a>
+                            <a href="#" class="link">
+                            <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
+                        </div>
+
+                        <div class="masonry-item card">
+                        <img src="./assets/colorpen.png" alt="Card 3">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Card 3</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <a href="#" class="zoom">
+                            <i class="bi bi-zoom-in"></i>
+                            </a>
+                            <a href="#" class="link">
+                            <i class="bi bi-link-45deg"></i>
+                            </a>
+                        </div>
+                        </div>
+
             </div>
         </section>
     </main>
