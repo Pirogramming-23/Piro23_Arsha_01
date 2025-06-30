@@ -127,7 +127,12 @@
     --nav-dropdown-hover-color: #47b2e4;
     --accent-color: #47b2e4;
     --default-color: #444444;
-    --background-color: #f5f6f8;
+    --background-color: #ffffff;
+    --default-color: #444444;
+    --heading-color: #37517e;
+    --accent-color: #47b2e4;
+    --surface-color: #ffffff;
+    --contrast-color: #ffffff;
 }
 
 *,::after,::before{
@@ -145,7 +150,7 @@ body{margin:0;
 
 h1, h2, h3, h4, h5, h6 {
     color: var(--heading-color);
-    font-family: var(--heading-font);
+    /* font-family: var(--heading-font); */
 }
 a{
     text-decoration: none;
@@ -187,7 +192,7 @@ section, .section {
 
 .section-title h2 {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: bolder;
     margin-bottom: 20px;
     padding-bottom: 20px;
     text-transform: uppercase;
@@ -261,9 +266,28 @@ section, .section {
 }
 
 .service-item .icon {
+
     font-size: 40px;
-    color: #0d6efd;
+    --accent-color: #47b2e4;
     margin-bottom: 20px;
+}
+
+.work-process .step-content .step-number {
+    position: absolute;
+    left: 30px;
+    top: -30px;
+    width: 60px;
+    height: 60px;
+    background: var(--accent-color);
+    color: var(--contrast-color);
+    border-radius: 50%;
+    font-family: var(--heading-font);
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
 }
 
 .service-item h4 {
@@ -271,6 +295,10 @@ section, .section {
     color: #012970;
     font-weight: bold;
     margin-bottom: 10px;
+}
+
+.service-item:hover h4{
+    color: var(--accent-color);
 }
 
 .service-item p {
@@ -286,12 +314,6 @@ section, .section {
     font-family: sans-serif;
 }
 
-.section-title h2 {
-    font-size: 28px;
-    color: #2c3e50;
-    margin-bottom: 10px;
-}
-
 .section-title p {
     color: #666;
     font-size: 14px;
@@ -304,32 +326,128 @@ section, .section {
     margin-top: 40px;
 }
 
-.step-card {
+/* .step-card {
     background: white;
     border-radius: 16px;
     padding: 20px;
     text-align: left;
     position: relative;
     transition: 0.3s ease;
+} */
+/* 변경: .card → .step-card */
+.step-card {
+  background: #fff;
+  width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* 변경: .card:hover → .step-card:hover */
+.step-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 변경: .card-image img → .step-card .card-image img */
+/* .step-card .card-image img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+} */
+
+/* 변경: .card:hover .card-image img → .step-card:hover .card-image img */
+.step-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+/* 변경: .card-content → .step-card .card-content */
+.step-card .card-content {
+  padding: 20px;
+  text-align: left;
+}
+
+.step-card .card-content h3 {
+  color: #1f2d3d;
+  margin-bottom: 10px;
+}
+
+.step-card .card-content p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.step-card .card-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.step-card .card-content ul li {
+    margin-bottom: 8px;
+    color: #333;
+    font-size: 14px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.step-card .card-content ul li::before {
+    position: absolute;
+    left: 0;
+    color: #00aaff;
 }
 
 .step-card img {
-    width: 100%;
+    width: 200px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
+.step-card:hover img {
+    transform: scale(1.05);
+}
+.check-circle {
+    width: 16px !important;
+    height: 16px !important;
+    flex-shrink: 0;            /* 크기 줄어들지 않도록 고정 */
+    vertical-align: middle;
+    text-align: center;
+    margin-right: 8px;
+    color: #00aaff;
+    /* filter: brightness(0) saturate(100%) sepia(100%) hue-rotate(180deg) saturate(500%) brightness(1.2); */
+
+}
+.check-circle.blue {
+    filter: brightness(0) saturate(100%) sepia(100%) hue-rotate(180deg) saturate(500%) brightness(1.2);
+}
+.list-item {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 0 0 30px;
+}
+
+
+
+
 
 .step-number {
     position: absolute;
-    top: 20px;
-    left: 20px;
-    background: #00a8ff;
-    color: white;
+    top: 15px;
+    left: 15px;
+    background-color: #00aaff; /* 파란 배경 */
+    color: #fff;
     font-weight: bold;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 14px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    z-index: 2;
 }
+
 
 .step-card h3 {
     color: #2c3e50;
@@ -351,7 +469,6 @@ section, .section {
 .features li {
     font-size: 14px;
     color: #333;
-    margin-bottom: 8px;
 }
 .call-to-action {
     position: relative;
