@@ -13,14 +13,18 @@
         <section id="subscribe" class="subscribe section">
             <div class="container reveal-on-scroll">
                 <div class="subscribe-content">
+                    <input type="radio" id="subscribe-clear" name="subscribe-status" hidden checked>
+                    <input type="radio" id="subscribe-error" name="subscribe-status" hidden>
+
                     <div class="subscribe-column1">
                         <div class="subscribe-column1-content reveal-on-scroll">
                             <h2>Subscribe to our newsletter</h2>
                             <p>Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Curabitur aliquet quam id dui posuere blandit.</p>
                             <div class="subscribe-form reveal-on-scroll">
                                 <input type="email" name="email" placeholder="Email address..." class="form-control">
-                                <input type="submit" value="Subscribe">
+                                <label for="subscribe-error">Subscribe</label>
                             </div>
+                            <div class="subscribe-error">Error: 403  https://bootstrapmade.com/content/demo/Arsha/forms/newsletter.php</div>
                         </div>
                     </div>
                     <div class="subscribe-column2">
@@ -208,6 +212,9 @@
                     </div>
                     <div class="contact-right">
                         <form class="contact-right-content reveal-on-scroll">
+                            <input type="radio" id="contact-error" name="contact-status" hidden>
+                            <input type="radio" id="contact-clear" name="contact-status" hidden checked>
+
                             <div class="contact-form">
                                 <div class="contact-form-item1">
                                     <label>Your Name</label>
@@ -226,7 +233,8 @@
                                     <textarea name="message" class="form-control" rows="10" id="message-field"></textarea>
                                 </div>
                                 <div class="contact-form-submit">
-                                    <button>Send Message</button>
+                                    <div class="contact-error">Error: 403  https://bootstrapmade.com/content/demo/Arsha/forms/contact.php</div>
+                                    <label for="contact-error">Send Message</label>
                                 </div>
                             </div>
                         </form>
@@ -242,11 +250,13 @@
                     <div class="footer-content">
                         <h4>Join Our Newsletter</h4>
                         <p>&nbsp;Subscribe to our newsletter and receive the latest news about our products and services!&nbsp;</p>
+                        <input type="radio" id="submit-fail" name="submit-status" hidden>
+                        <input type="radio" id="submit-clear" name="submit-status" hidden checked>
                         <div class="footer-form">
                             <input type="email" name="email">
-                            <input type="submit" value="Subscribe">
+                            <label for="submit-fail">Subscribe</label>
                         </div>
-                        <!-- <div class="footer-error">Error: 403  https://bootstrapmade.com/content/demo/Arsha/forms/newsletter.php</div> -->
+                        <div class="footer-error">Error: 403  https://bootstrapmade.com/content/demo/Arsha/forms/newsletter.php</div>
                     </div>
                 </div>
             </div>
