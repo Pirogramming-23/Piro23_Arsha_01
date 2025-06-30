@@ -6,15 +6,827 @@
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/arsha.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap" rel="stylesheet">
     <title>Arsha Bootstrap Template Demo</title>
 </head>
 <body>
-    <header></header>
-    <style>
-    </style>
+    <header id="G-header">
+        <div id="header-top">
+            <div class="logo">
+                <a href="#" rel="home" title="Back to BootstrapMade Homepage">
+                    <img alt="BootstrapMade" src="https://bootstrapmade.com/assets/img/logo.png">
+                </a>
+            </div>
+            <div class="preview-devices">
+                <ul>
+                    <li class="preview-test" id="preview-test-desktop" title="Desktop preview of the Arsha template">
+                        <a href>
+                            <svg class="icon icon-preview">
+                                <use xlink:href="./assets/icons.svg#preview"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="preview-test" id="preview-test-tablet" title="Tablet preview of the Arsha template">
+                        <a href>
+                            <svg class="icon icon-tablet" fill="currentColor">
+                                <use xlink:href="./assets/icons.svg#tablet"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="preview-test" id="preview-test-mobile" title="Mobile preview of the Arsha template">
+                        <a href>
+                            <svg class="icon icon-smartphone" fill="currentColor">
+                                <use xlink:href="./assets/icons.svg#smartphone"></use>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="current-template">
+                <a href="https://bootstrapmade.com/demo/FashionStore/" title="Previous Template: FashionStore" target="_top">
+                    <svg class="icon icon-chevron-left" fill="currentColor">
+                        <use xlink:href="./assets//icons.svg#chevron-left"></use>
+                    </svg>
+                </a>
+                <a class="template-home" href="https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/" title="Arsha Template Home Page">Arsha</a>
+                <a href="https://bootstrapmade.com/demo/Visible/" title="Next Template: Visible" target="_top">
+                    <svg class="icon icon-chevron-right" fill="currentColor">
+                        <use xlink:href="./assets/icons.svg#chevron-right"></use>
+                    </svg>
+                </a>
+            </div>
+            <div class="navigate">
+                <a href="https://bootstrapmade.com/content/demo/Arsha/" target="_top" title="Hide the demo bar">
+                    <svg class="icon icon-external-link" fill="currentColor">
+                        <use xlink:href="./assets/icons.svg#external-link"></use>
+                    </svg>
+                </a>
+                <a class="download" href="https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/#download" title="Download the Arsha Template">
+                    <svg class="icon icon-download" fill="currentColor">
+                        <use xlink:href="./assets/icons.svg#download"></use>
+                    </svg> 
+                    <span>Download</span>
+                </a>
+            </div>
+        </div>
+        <div id="header-bottom">
+            <div id="header-bottom-content">
+                <a href="#" class="logo">
+                    <h1 class="sitename">Arsha</h1>
+                </a>
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                    <li><a href="#header-bottom" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-link">
+                            Dropdown
+                            <img src="./assets/chevron-down.svg" alt="▼" class="icon" />
+                        </a>
+                        <ul>
+                        <li><a href="#">Dropdown 1</a></li>
+                        <li class="deep-dropdown">
+                            <a href="#" class="dropdown-link">
+                                Deep Dropdown
+                                <img src="./assets/chevron-down.svg" class="icon original-color" alt="▼" class="icon" />
+                            </a>
+                            <ul>
+                            <li><a href="#">Deep Dropdown 1</a></li>
+                            <li><a href="#">Deep Dropdown 2</a></li>
+                            <li><a href="#">Deep Dropdown 3</a></li>
+                            <li><a href="#">Deep Dropdown 4</a></li>
+                            <li><a href="#">Deep Dropdown 5</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Dropdown 2</a></li>
+                        <li><a href="#">Dropdown 3</a></li>
+                        <li><a href="#">Dropdown 4</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#contact">Contact</a></li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+                <a class="btn-getstarted" href="#about">Get Started</a>
+            </div>
+        </div>
+    </header>
     <main>
-        <!--Section-TEAM-->
+        <section id="hero" class="hero section dark-background">
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="container-content" data-aos="zoom-out">
+                    	<h1>Better Solutions For<br> Your Business</h1>
+						<p>We are team of talented designers making<br> websites with Bootstrap</p>
+						<div class="container-content-button">
+                        <a href="#about" class="btn-get-started">Get Started</a>
+                        <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox btn-watch-video">
+                            <img src="./assets/play-circle.svg" alt="d"><span>Watch Video</span>
+                        </a>
+                    </div>
+                    </div>
+                    <div class="container-animation hero-img aos-init" data-aos="zoom-out" data-aos-delay="200">
+                    	<img src="./assets/hero-img.png" class="img-fluid animated up-down" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="clients" class="clients section light-background">
+            <div class="container slider-container">
+                <div class="slider-track">
+                    <div class="slider-wrapper">
+                        <div class="slide"><img src="./assets/clients-1.png" class="img-fluid" alt="Client 1" /></div>
+                        <div class="slide"><img src="./assets/clients-2.png" class="img-fluid" alt="Client 2" /></div>
+                        <div class="slide"><img src="./assets/clients-3.png" class="img-fluid" alt="Client 3" /></div>
+                        <div class="slide"><img src="./assets/clients-4.png" class="img-fluid" alt="Client 4" /></div>
+                        <div class="slide"><img src="./assets/clients-5.png" class="img-fluid" alt="Client 5" /></div>
+                        <div class="slide"><img src="./assets/clients-6.png" class="img-fluid" alt="Client 6" /></div>
+                        <div class="slide"><img src="./assets/clients-7.png" class="img-fluid" alt="Client 7" /></div>
+                        <div class="slide"><img src="./assets/clients-8.png" class="img-fluid" alt="Client 8" /></div>
+
+                        <div class="slide"><img src="./assets/clients-1.png" class="img-fluid" alt="Client 1" /></div>
+                        <div class="slide"><img src="./assets/clients-2.png" class="img-fluid" alt="Client 2" /></div>
+                        <div class="slide"><img src="./assets/clients-3.png" class="img-fluid" alt="Client 3" /></div>
+                        <div class="slide"><img src="./assets/clients-4.png" class="img-fluid" alt="Client 4" /></div>
+                        <div class="slide"><img src="./assets/clients-5.png" class="img-fluid" alt="Client 5" /></div>
+                        <div class="slide"><img src="./assets/clients-6.png" class="img-fluid" alt="Client 6" /></div>
+                        <div class="slide"><img src="./assets/clients-7.png" class="img-fluid" alt="Client 7" /></div>
+                        <div class="slide"><img src="./assets/clients-8.png" class="img-fluid" alt="Client 8" /></div>
+
+                        <div class="slide"><img src="./assets/clients-1.png" class="img-fluid" alt="Client 1" /></div>
+                        <div class="slide"><img src="./assets/clients-2.png" class="img-fluid" alt="Client 2" /></div>
+                        <div class="slide"><img src="./assets/clients-3.png" class="img-fluid" alt="Client 3" /></div>
+                        <div class="slide"><img src="./assets/clients-4.png" class="img-fluid" alt="Client 4" /></div>
+                        <div class="slide"><img src="./assets/clients-5.png" class="img-fluid" alt="Client 5" /></div>
+                        <div class="slide"><img src="./assets/clients-6.png" class="img-fluid" alt="Client 6" /></div>
+                        <div class="slide"><img src="./assets/clients-7.png" class="img-fluid" alt="Client 7" /></div>
+                        <div class="slide"><img src="./assets/clients-8.png" class="img-fluid" alt="Client 8" /></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="About" class="section">
+            <div class="container section-title">
+                <h2>About us</h2>
+            </div>
+            <div class="container">
+                <div class="row gy-4">
+                    <div class="container-content-left">
+                    	<p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                        magna aliqua.
+						</p>
+						<ul>
+							<li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
+							<li><i class="bi bi-check2-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
+							<li><i class="bi bi-check2-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo</span></li>
+                      	</ul>
+                    </div>
+          
+                    <div class="col-lg-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                      <p>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+                      <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+                    </div>
+          
+                  </div>
+            </div>
+        </section>
+		<section id="services" class="services section light-background">
+        <!-- Section Title -->
+        <div class="contaner section-title">
+            <h2>Services</h2>
+            <p>
+            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+            </p>
+        </div>
+    
+            <div class="services-grid">
+                <a href="#" class=" service-item fade-up">
+                        <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="25" fill="#47b2e4" class="bi bi-activity" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2"/>
+                        </svg></div>
+                            <h4>Lorem Ipsum</h4>
+                            <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+                </a>
+				<a href="#" class="service-item fade-up">
+					<div class="icon">
+					<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="25" fill="#47b2e4" class="bi bi-bounding-box-circles" viewBox="0 0 16 16">
+					<path d="M2 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2M0 2a2 2 0 0 1 3.937-.5h8.126A2 2 0 1 1 14.5 3.937v8.126a2 2 0 1 1-2.437 2.437H3.937A2 2 0 1 1 1.5 12.063V3.937A2 2 0 0 1 0 2m2.5 1.937v8.126c.703.18 1.256.734 1.437 1.437h8.126a2 2 0 0 1 1.437-1.437V3.937A2 2 0 0 1 12.063 2.5H3.937A2 2 0 0 1 2.5 3.937M14 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2M2 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2m12 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
+					</svg></div>
+					<h4>Sed ut perspici</h4>
+					<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+				</a>
+                <a href="#" class="service-item fade-up">
+                <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="25" fill="#47b2e4" class="bi bi-calendar3-week" viewBox="0 0 16 16">
+                <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2M1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857z"/>
+                <path d="M12 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m2-3a1 1 0 1 0 0-2 1 1 0 0 0 0 2m-5 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2"/>
+                </svg>                
+                </div>
+                <h4>Magni Dolores</h4>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+                </a>
+    
+                <a href="#" class="service-item fade-up">
+                    <div class="icon">            
+                    <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="25" fill="#47b2e4" class="bi bi-broadcast" viewBox="0 0 16 16">
+                    <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707m2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708m5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708m2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/>
+                    </svg></div>
+                        <h4>Nemo Enim</h4>
+                        <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
+                </a>
+        </div>
+    </section>
+    <!-- work-process -->
+    <section class="work-process-section">
+    <div class="section-title"> 
+    <h2>WORK PROCESS</h2>
+    <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+    </div>
+    
+    <div class="work-process-container">
+    
+    <!-- Step 1 -->
+    <div class="step-card fade-up">
+      <div class="card-image">
+        <img src="./assets/handshake.png" class="step-card-main-img" alt="Step 1 Image" />
+      </div>
+      <div class="step-number">01</div>
+      <div class="card-info">
+        <h3>Design & Planning</h3>
+        <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit...</p>
+        <ul class="features">
+          <li class="list-item">
+            <img src="./assets/check-circle-fill.svg" class="check-circle" alt="Check Icon" />
+            <span>Market Research</span>
+          </li>
+          <li class="list-item">
+            <img src="./assets/check-circle-fill.svg" class="check-circle" alt="Check Icon" />
+            <span>UX Design</span>
+          </li>
+          <li class="list-item">
+            <img src="./assets/check-circle-fill.svg" class="check-circle" alt="Check Icon" />
+            <span>Prototyping</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Step 2 -->
+    <div class="step-card fade-up">
+      <div class="card-image">
+        <img src="./assets/meeting.png" class="step-card-main-img" alt="Step 2 Image" />
+      </div>
+      <div class="step-number">02</div>
+      <div class="card-info">
+        <h3>Development & Launch</h3>
+        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore...</p>
+        <ul class="features">
+          <li class="list-item">
+            <img src="./assets/check-circle-fill.svg" class="check-circle" alt="Check Icon" />
+            <span>Market Research</span>
+          </li>
+          <li class="list-item">
+            <img src="./assets/check-circle-fill.svg" class="check-circle" alt="Check Icon" />
+            <span>UX Design</span>
+          </li>
+          <li class="list-item">
+            <img src="./assets/check-circle-fill.svg" class="check-circle" alt="Check Icon" />
+            <span>Prototyping</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Step 3 -->
+    <div class="step-card fade-up">
+      <div class="card-image">
+        <img src="./assets/rocket.png" class="step-card-main-img" alt="Step 3 Image" />
+      </div>
+      <div class="step-number">03</div>
+      <div class="card-info">
+        <h3>Deployment</h3>
+        <p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore...</p>
+        <ul class="features">
+          <li class="list-item">
+            <img src="./assets/check-circle-fill.svg" class="check-circle" alt="Check Icon" />
+            <span>Market Research</span>
+          </li>
+          <li class="list-item">
+            <img src="./assets/check-circle-fill.svg" class="check-circle" alt="Check Icon" />
+            <span>UX Design</span>
+          </li>
+          <li class="list-item">
+            <img src="./assets/check-circle-fill.svg" class="check-circle" alt="Check Icon" />
+            <span>Prototyping</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+    </section>
+    <!-- back -->
+    <section id="call-to-action" class="call-to-action">
+    <div class="cta-overlay"></div>
+        <div class="cta-container fade-up">
+        <div class="cta-text">
+            <h3>Call To Action</h3>
+            <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+        <div class="cta-button-container">
+            <a href="#" class="cta-btn">Call To Action</a>
+        </div>
+        </div>
+    
+    </section>
+        <section id="portfolio" class="portfolio section">
+            <div class="container section-title">
+                <h2>
+                    Portfolio
+                </h2>
+                <p>
+                    Necessitatibus eius consequatur ex aliquid fuga eum 
+                    quidem sint consectetur velit
+                </p>
+            </div>
+            <!-- title-end -->
+                <!-- 필터 라디오 버튼 (눈에 안 보이게 처리) -->
+                    <input type="radio" name="filter" id="filter-all" checked hidden>
+                    <input type="radio" name="filter" id="filter-app" hidden>
+                    <input type="radio" name="filter" id="filter-card" hidden>
+                    <input type="radio" name="filter" id="filter-web" hidden>
+
+                    <!-- 필터 버튼 UI -->
+                    <div class="filter-wrapper">
+                        <div class="filter-buttons">
+                            <label for="filter-all">All</label>
+                            <label for="filter-app">App</label>
+                            <label for="filter-card">Card</label>
+                            <label for="filter-web">Web</label>
+                        </div>
+                    </div>
+
+            <div class="masonry-container">
+
+                    <div class="masonry-item app">
+                        <img src="./assets/cactus.png" alt="App 1">
+                            <div class="info">
+                                <div class="text">
+                                <h4>App 1</h4>
+                                <p>Lorem ipsum, dolor sit</p>
+                                </div>
+
+                                
+                                <!-- 아이콘 (모달 열기용) -->
+                                <div class="icons">
+                                    <a href="#img1" class="zoom">
+                                        <img src="./assets/zoom-in.svg" class="zoom-icon" style="width: 24px; height: 24px;">
+                                    </a>
+
+                                    <a href="./portfolio-details.html" class="link">
+                                        <img src="./assets/link-45deg.svg"class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        
+
+                    <div class="masonry-item web">
+                        <img src="./assets/glowpen.png" calt="Web 1">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Web 1</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+
+                            <!-- 아이콘 (모달 열기용) -->
+                            <div class="icons">
+                                <a href="#img2" class="zoom">
+                                    <img src="./assets/zoom-in.svg" class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                </a>
+
+                                <a href="./portfolio-details.html" class="link">
+                                    <img src="./assets/link-45deg.svg"class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                        <div class="masonry-item card">
+                        <img src="./assets/serum.png" alt="Card 1">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Product 1</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+
+                            <!-- 아이콘 (모달 열기용) -->
+                                <div class="icons">
+                                <a href="#img3" class="zoom">
+                                    <img src="./assets/zoom-in.svg" class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                </a>
+
+                            <a href="./portfolio-details.html" class="link">
+                                    <img src="./assets/link-45deg.svg"class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                </a>
+                        </div>
+                        </div>
+                        </div>
+
+                        <div class="masonry-item app">
+                        <img src="./assets/pencollection.png" alt="App 2">
+                        <div class="info">
+                            <div class="text">
+                            <h4>App 2</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+
+                            <!-- 아이콘 (모달 열기용) -->
+                            <div class="icons">
+                                    <a href="#img4" class="zoom">
+                                    <img src="./assets/zoom-in.svg" class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                    </a>
+
+                            <a href="./portfolio-details.html" class="link">
+                                    <img src="./assets/link-45deg.svg"class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                            </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="masonry-item app">
+                        <img src="./assets/tread.png" alt="App 3">
+                        <div class="info">
+                            <div class="text">
+                            <h4>App 3</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+
+                            <!-- 아이콘 (모달 열기용) -->
+                            <div class="icons">
+                                    <a href="#img5" class="zoom">
+                                    <img src="./assets/zoom-in.svg" class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                    </a>
+
+                                <a href="#" class="link">
+                                    <img src="./assets/link-45deg.svg"class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="masonry-item web">
+                        <img src="./assets/littleblackbook.png" alt="Web 2">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Branding 3</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+
+                            <!-- 아이콘 (모달 열기용) -->
+                            <div class="icons">
+                                    <a href="#img6" class="zoom">
+                                    <img src="./assets/zoom-in.svg" class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                    </a>
+
+                                <a href="#" class="link">
+                                    <img src="./assets/link-45deg.svg"class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    <div class="masonry-item web">
+                        <img src="./assets/paint.png" alt="Web 3">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Branding 3</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <!-- 아이콘 (모달 열기용) -->
+                            <div class="icons">
+                                    <a href="#img7" class="zoom">
+                                    <img src="./assets/zoom-in.svg" class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                    </a>
+                                <a href="#" class="link">
+                                    <img src="./assets/link-45deg.svg"class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="masonry-item card">
+                        <img src="./assets/paintbrush.png" alt="Card 2">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Product 2</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <!-- 아이콘 (모달 열기용) -->
+                            <div class="icons">
+                                    <a href="#img8" class="zoom">
+                                    <img src="./assets/zoom-in.svg" class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                    </a>
+                                <a href="#" class="link">
+                                    <img src="./assets/link-45deg.svg"class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="masonry-item card">
+                        <img src="./assets/colorpen.png" alt="Card 3">
+                        <div class="info">
+                            <div class="text">
+                            <h4>Branding 3</h4>
+                            <p>Lorem ipsum, dolor sit</p>
+                            </div>
+                            <!-- 아이콘 (모달 열기용) -->
+                            <div class="icons">
+                                    <a href="#img9" class="zoom">
+                                    <img src="./assets/zoom-in.svg"class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                    </a>
+                                <a href="#" class="link">
+                                    <img src="./assets/link-45deg.svg"class="zoom-icon" alt="Zoom In Icon" style="width: 24px; height: 24px;">
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <!-- <details>
+                            <iframe id="demo-frame"
+                                    name="demo-frame"
+                                    style="display: none; width: 100%; height: 100vh; border: none; margin-top: 40px;">
+                            </iframe>
+                        </details> -->
+                        </div>
+                    </div>
+
+                </section>
+                            <!-- 라이트박스 모달 (숨겨져 있다가 target 되면 보여짐) -->
+                                    <!-- 이미지 1 -->
+                                    <div id="img1" class="lightbox">
+                                    <a href="#" class="close">
+                                            <!-- 닫기용 SVG 아이콘 -->
+                                            <img src="./assets/x-lg.svg">
+                                    </a>
+
+                                    <a href="">
+                                        <button class="slide-nav prev first" aria-label="Previous">
+                                        <img src="./assets/chevron-left.svg">
+                                        </button>
+                                    </a>
+
+                                    <a href="#img2">
+                                        <button class="slide-nav next" aria-label="Next">
+                                            <img src="./assets/chevron-right.svg">
+                                        </button>
+                                        </button>
+                                    </a>
+
+                                    <div class="lightbox-content">
+                                        <img src="./assets/cactus.png" alt="App 1">
+                                        <div class="gdesc-inner">
+                                        <h4 class="gslide-title">App 1</h4>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <!-- 이미지 2 -->
+                                    <div id="img2" class="lightbox">
+                                    <a href="#" class="close">
+                                            <!-- 닫기용 SVG 아이콘 -->
+                                            <img src="./assets/x-lg.svg">
+                                    </a>
+
+                                    <a href="#img1">
+                                        <button class="slide-nav prev" aria-label="Previous">
+                                        <img src="./assets/chevron-left.svg">
+                                        </button>
+                                    </a>
+
+                                    <a href="#img3">
+                                        <button class="slide-nav next" aria-label="Next">
+                                        <img src="./assets/chevron-right.svg">
+                                        </button>
+                                    </a>
+
+                                    <div class="lightbox-content">
+                                        <img src="./assets/glowpen.png" alt="Branding 1">
+                                        <div class="gdesc-inner">
+                                        <h4 class="gslide-title">Branding 1</h4>
+                                        </div>
+                                    </div>
+                                    </div>
+
+                                    <div id="img3" class="lightbox">
+                                        <a href="#" class="close">
+                                            <!-- 닫기용 SVG 아이콘 -->
+                                            <img src="./assets/x-lg.svg">
+                                    </a>
+                                        <a href="#img2">
+                                            <button class="slide-nav prev" aria-label="Previous">
+                                                <img src="./assets/chevron-left.svg">
+                                                </button>
+                                        </a>
+                                        <a href="#img4">
+                                                <button class="slide-nav next" aria-label="Next">
+                                                    <img src="./assets/chevron-right.svg">
+                                                </button>
+                                        </a>
+                                            <div class="lightbox-content">
+                                                <img src="./assets/serum.png" alt="App 1">
+
+                                                <div class="gdesc-inner">
+                                                <h4 class="gslide-title">Product 1</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <!-- 이미지 4 -->
+                                        <div id="img4" class="lightbox">
+                                        <a href="#" class="close">
+                                            <!-- 닫기용 SVG 아이콘 -->
+                                            <a href="#" class="close">
+                                            <!-- 닫기용 SVG 아이콘 -->
+                                                <img src="./assets/x-lg.svg">
+                                            </a>
+
+                                        <a href="#img3">
+                                            <button class="slide-nav prev" aria-label="Previous">
+                                            <img src="./assets/chevron-left.svg">
+                                            </button>
+                                        </a>
+
+                                        <a href="#img5">
+                                            <button class="slide-nav next" aria-label="Next">
+                                            <img src="./assets/chevron-right.svg">
+                                            </button>
+                                        </a>
+
+                                        <div class="lightbox-content">
+                                            <img src="./assets/pencollection.png" alt="App 2">
+                                            <div class="gdesc-inner">
+                                            <h4 class="gslide-title">App 2</h4>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                        <!-- 이미지 5 -->
+                                        <div id="img5" class="lightbox">
+                                            <a href="#" class="close">
+                                                <!-- 닫기용 SVG 아이콘 -->
+                                                <img src="./assets/x-lg.svg">
+                                            </a>
+
+                                        <a href="#img4">
+                                            <button class="slide-nav prev" aria-label="Previous">
+                                            <img src="./assets/chevron-left.svg">
+                                            </button>
+                                        </a>
+
+                                        <a href="#img6">
+                                            <button class="slide-nav next" aria-label="Next">
+                                            <img src="./assets/chevron-right.svg">
+                                            </button>
+                                        </a>
+
+                                        <div class="lightbox-content">
+                                            <img src="./assets/tread.png" alt="App 3">
+                                            <div class="gdesc-inner">
+                                            <h4 class="gslide-title">App 3</h4>
+                                            </div>
+                                        </div>
+                                        </div>
+
+                                        <!-- 이미지 6 -->
+                                        <div id="img6" class="lightbox">
+                                        <a href="#" class="close">
+                                            <!-- 닫기용 SVG 아이콘 -->
+                                            <a href="#" class="close">
+                                                <!-- 닫기용 SVG 아이콘 -->
+                                                <img src="./assets/x-lg.svg">
+                                            </a>
+
+                                        <a href="#img5">
+                                            <button class="slide-nav prev" aria-label="Previous">
+                                            <img src="./assets/chevron-left.svg">
+                                            </button>
+                                        </a>
+
+                                        <a href="#img7">
+                                            <button class="slide-nav next" aria-label="Next">
+                                            <img src="./assets/chevron-right.svg">
+                                            </button>
+                                        </a>
+
+                                            <div class="lightbox-content">
+                                                <img src="./assets/littleblackbook.png" alt="Branding 3">
+                                                <div class="gdesc-inner">
+                                                <h4 class="gslide-title">Branding 3</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <div id="img7" class="lightbox">
+                                        <a href="#" class="close">
+                                            <!-- 닫기용 SVG 아이콘 -->
+                                            <a href="#" class="close">
+                                                <!-- 닫기용 SVG 아이콘 -->
+                                                <img src="./assets/x-lg.svg">
+                                            </a>
+                                        <a href="#img6">
+                                            <button class="slide-nav prev" aria-label="Previous">
+                                            <img src="./assets/chevron-left.svg">
+                                            </button>
+                                        </a>
+
+                                        <a href="#img8">
+                                            <button class="slide-nav next" aria-label="Next">
+                                            <img src="./assets/chevron-right.svg">
+                                            </button>
+                                        </a>
+
+                                            <div class="lightbox-content">
+                                                <img src="./assets/paint.png" alt="Branding 3">
+                                                <div class="gdesc-inner">
+                                                <h4 class="gslide-title">Branding 1</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <div id="img8" class="lightbox">
+                                        <a href="#" class="close">
+                                            <!-- 닫기용 SVG 아이콘 -->
+                                            <a href="#" class="close">
+                                                <!-- 닫기용 SVG 아이콘 -->
+                                                <img src="./assets/x-lg.svg">
+                                            </a>
+                                        <a href="#img7">
+                                            <button class="slide-nav prev" aria-label="Previous">
+                                            <img src="./assets/chevron-left.svg">
+                                            </button>
+                                        </a>
+
+                                        <a href="#img9">
+                                            <button class="slide-nav next" aria-label="Next">
+                                            <img src="./assets/chevron-right.svg">
+                                            </button>
+                                        </a>
+
+                                            <div class="lightbox-content">
+                                                <img src="./assets/paintbrush.png" alt="./assets/paintbrush.png">
+                                                <div class="gdesc-inner">
+                                                <h4 class="gslide-title">Product 2</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <div id="img9" class="lightbox">
+                                        <a href="#" class="close">
+                                            <!-- 닫기용 SVG 아이콘 -->
+                                            <a href="#" class="close">
+                                                <!-- 닫기용 SVG 아이콘 -->
+                                                <img src="./assets/x-lg.svg">
+                                            </a>
+                                        <a href="#img8">
+                                            <button class="slide-nav prev" aria-label="Previous">
+                                            <img src="./assets/chevron-left.svg">
+                                            </button>
+                                        </a>
+
+                                        <a href="#">
+                                            <button class="slide-nav next last" aria-label="Next">
+                                            <img src="./assets/chevron-right.svg">
+                                            </button>
+                                        </a>
+
+                                            <div class="lightbox-content">
+                                                <img src="./assets/colorpen.png" alt="./assets/paintbrush.png">
+                                                <div class="gdesc-inner">
+                                                <h4 class="gslide-title">Product 3</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                      
+                                      
+<!--  merge end  -->
+     <!--Section-TEAM-->
 
        <section class="section-team ">
             <!-- 제목 -->
@@ -391,11 +1203,10 @@
                 </div>
             </div>
         </section>
-
+                                      
+    
     </main>
-    <footer></footer>
-</body>
-</html>
-
-
+  <footer></footer>
+  </body>
+  </html>
 
