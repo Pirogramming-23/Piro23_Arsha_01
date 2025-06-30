@@ -329,6 +329,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .masonry-item {
     display: block;
+    margin-bottom: 40px;
 }
 
 .zoom{
@@ -474,4 +475,77 @@ h1, h2, h3, h4, h5, h6 {
     padding-right: calc(var(--bs-gutter-x) * .5);
     padding-left: calc(var(--bs-gutter-x) * .5);
     margin-top: var(--bs-gutter-y);
+}
+
+#preview {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 32px;
+    bottom: 0;
+    transition: all .2s;
+}
+iframe#demo-frame {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ccc;
+}
+
+.page-title {
+    --background-color: 
+    color-mix(in srgb, var(--default-color), transparent 96%);
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 40px 0;
+    position: relative;
+}
+.page-title .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.breadcrumbs li {
+    color: #6c757d;
+}
+
+.breadcrumbs li + li::before {
+    content: "/";
+    padding: 0 8px;
+    color: #6c757d;
+}
+
+.breadcrumbs li a {
+    text-decoration: none;
+    color: #0d6efd; /* Bootstrap 기본 파랑 */
+}
+
+.breadcrumbs li a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs li.current {
+    color: #212529;
+    font-weight: 600;
+}
+
+.page-title h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.portfolio-details{
+    padding: 40px 0;
 }
