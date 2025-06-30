@@ -116,6 +116,9 @@
     --bs-form-valid-border-color: #198754;
     --bs-form-invalid-color: #dc3545;
     --bs-form-invalid-border-color: #dc3545;
+    --default-color: #444444;
+    --background-color:#fff;
+    --accent-color: #47b2e4;
     --nav-font:"Poppins", sans-serif;
     --heading-font: "Jost", sans-serif;
     --default-font:"Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -128,7 +131,6 @@ body,html{
 
 body{
     margin:0;
-    overflow:hidden;
     background: white url(../img/demo-bg.jpg) 0 0 repeat;
     position:relative;
     font-family: var(--default-font);
@@ -149,6 +151,9 @@ li {
     display: list-item;
     text-align: -webkit-match-parent;
     unicode-bidi: isolate;
+}
+img, svg {
+    vertical-align: middle;
 }
 svg {
     overflow-clip-margin: content-box;
@@ -290,6 +295,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 15px;
     font-family: "Poppins", sans-serif;
     font-weight: 400;
+    margin-left: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -501,7 +507,7 @@ h1, h2, h3, h4, h5, h6 {
     background: color-mix(in srgb, #47b2e4, transparent 15%);
 }
 
-/* hero */
+/* section hero */
 .hero {
     width: 100%;
     min-height: 80vh;
@@ -569,7 +575,7 @@ h1, h2, h3, h4, h5, h6 {
  color-mix(in srgb, #47b2e4, transparent 15%);
 }
 .hero .btn-watch-video {
-    font-size: 24px;
+    font-size: 16px;
     transition: 0.5s;
     margin-left: 25px;
     color: var(--default-color);
@@ -613,4 +619,115 @@ h1, h2, h3, h4, h5, h6 {
 .img-fluid {
     max-width: 100%;
     height: auto;
+}
+
+/* section-client */
+.clients {
+    padding: 12px 0;
+}
+.light-background {
+    --background-color: #f5f6f8;
+    --surface-color: #ffffff;
+}
+.slider-container {
+    width: 1236px;
+    padding: 0 12px;
+    margin: 0 75.5px;
+    overflow: hidden;
+}
+.slider-track {
+    padding: 10px 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block;
+}
+.slider-wrapper {
+    height: auto;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    transition-property: transform;
+    transition-timing-function: var(--swiper-wrapper-transition-timing-function, initial);
+    box-sizing: content-box;
+    align-items: center !important;
+    animation: step-slide 18s infinite;
+}
+.slide {
+    width: 86px;
+    margin-right: 120px;
+    flex-shrink: 0;
+    height: 100%;
+    position: relative;
+    transition-property: transform;
+    display: block;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+.slide img {
+    height:24.75px;
+}
+@keyframes step-slide {
+    0%, 9.09%    { transform: translateX(0); }
+    12%, 21.09%  { transform: translateX(-206px); }
+    24%, 33.09%  { transform: translateX(-412px); }
+    36%, 45.09%  { transform: translateX(-618px); }
+    48%, 57.09%  { transform: translateX(-824px); }
+    60%, 69.09%  { transform: translateX(-1030px); }
+    72%, 81.09%  { transform: translateX(-1236px); }
+    84%, 93.09%  { transform: translateX(-1442px); }
+    96%, 100%    { transform: translateX(0); }
+  }
+
+  /* section About */
+  .section-title {
+    text-align: center;
+    padding-bottom: 60px;
+    position: relative;
+}
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+}
+.section-title h2:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background:      color-mix(in srgb, var(--default-color), transparent 60%);
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
+}
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.container-content-left{
+    flex: 0 0 auto;
+    width: 50%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
 }
