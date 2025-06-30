@@ -281,7 +281,6 @@ li {
   height: 150px;
   object-fit: cover;
   border-radius: 50%;
-  border: 4px solid #f3f3f3;
   max-width: 100%;
   height: auto;
 }
@@ -502,18 +501,26 @@ li {
 }
 
 .pricing-member button {
-  background-color: var(--accent-color);
+  font-family: var(--heading-font);
+  background-color: var(--bs-body-bg);
   border: none;
-  color: #fff;
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
   padding: 10px 24px;
   border-radius: 25px;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
+.pricing-member button:nth-of-type(2){
+  background-color: var(--accent-color);
+  color: var(--bs-body-bg);
+}
+
 .pricing-member button:hover {
   background-color: var(--accent-color);
+  color: var(--bs-body-bg);
 }
 
 
@@ -566,33 +573,50 @@ li {
   color: var(--default-color);
 }
 
-.testimonial-item {
+.testimonial-slider {
+  width: 100%;
+  overflow: hidden;
+  max-width: 800px;
   margin: 0 auto;
-  background: var(--bs-white);
-  padding: 40px 30px;
-  border-radius: 6px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
-  position: relative;
 }
+
+
+.testimonial-track {
+  display: flex;
+  width: calc(12.5% * 8);
+  animation: slideAnimation 64s ease-in-out infinite;
+}
+
+.testimonial-card {
+  flex: 0 0 100%;
+  padding: 40px;
+  background: #fff;
+  border-radius: 8px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
 
 .testimonial-img {
   width: 100px;
   border-radius: 50%;
-  margin: 0 auto 20px;
+  margin-bottom: 15px;
 }
 
-.testimonial-item h3 {
+.testimonial-card h3 {
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: 5px;
   color: var(--heading-color);
+  margin: 10px 0 5px;
 }
 
-.testimonial-item h4 {
+.testimonial-card h4 {
   font-size: 14px;
   color: #999;
   margin-bottom: 15px;
 }
+
 
 .stars {
   color: #ffc107;
@@ -600,12 +624,32 @@ li {
   margin-bottom: 15px;
 }
 
-.testimonial-item p {
+.testimonial-card p {
   font-style: italic;
   font-size: 16px;
   color: #555;
   line-height: 1.5;
+  max-width: 700px;
   margin: 0 auto;
+}
+
+.testimonial-dots {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.testimonial-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: background 0.3s ease-in-out;
+}
+
+.testimonial-dots .dot.active {
+  background: var(--accent-color);
 }
 
 .quote-icon-left,
@@ -616,21 +660,194 @@ li {
   margin: 0 5px;
 }
 
-.testimonial-dots {
-  margin-top: 30px;
+.testimonial-dots .dot1 { animation-delay: 0s; }
+.testimonial-dots .dot2 { animation-delay: 5s; }
+.testimonial-dots .dot3 { animation-delay: 10s; }
+.testimonial-dots .dot4 { animation-delay: 15s; }
+.testimonial-dots .dot5 { animation-delay: 20s; }
+.testimonial-dots .dot6 { animation-delay: 25s; }
+.testimonial-dots .dot7 { animation-delay: 30s; }
+.testimonial-dots .dot8 { animation-delay: 35s; }
+
+.testimonial-slider {
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.testimonial-dots .dot {
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background: #ccc;
-  border-radius: 50%;
-  margin: 0 5px;
-  transition: 0.3s;
+
+@keyframes slideAnimation {
+
+  0%,
+  12% {
+    transform: translateX(0%);
+  }
+
+  12.5%,
+  24.5% {
+    transform: translateX(-100%);
+  }
+
+  25%,
+  37% {
+    transform: translateX(-200%);
+  }
+
+  37.5%,
+  49.5% {
+    transform: translateX(-300%);
+  }
+
+  50.0%,
+  62.0% {
+    transform: translateX(-400%);
+  }
+
+  62.5%,
+  74.5% {
+    transform: translateX(-500%);
+  }
+
+  75%, 87% {transform: translateX(-600%);}
+  87.5%, 99.5% { transform: translateX(-700%);}
 }
 
-.testimonial-dots .dot.active {
+
+@keyframes dot {
+  0%, 4.9% { background: var(--accent-color); }
+  5%, 100% { background: #ccc; }
+}
+
+.slider:hover .testimonial-track,
+.slider:hover .dot {
+  animation-play-state: paused;
+}
+
+
+.section-faq {
+  text-align: center;
+  padding: 60px 20px;
+  background: var(--background-color)
+}
+
+.section-faq .section-title h2 {
+
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    color: var(--heading-color);
+}
+
+
+.section-faq .section-title h2::before,
+.section-faq .section-title h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: block;
+}
+
+.section-faq .section-title h2::before {
+  width: 160px;
+  height: 1px;
+  background: var(--default-color);
+  bottom: 1px;
+}
+
+.section-faq .section-title h2::after {
+  width: 60px;
+  height: 3px;
   background: var(--accent-color);
-  transform: scale(1.2);
+  bottom: 0;
+}
+
+.section-faqs .section-title p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    unicode-bidi: isolate;
+}
+
+.section-title-container{
+    margin: 0px 100px;
+    padding: 0px 12px 60px;
+}
+
+.container-faq {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.faq-item {
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  margin: 12px 0;
+}
+
+.faq-item input {
+  display: none;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 20px 20px;
+  position: relative;
+}
+
+.faq-icon {
+  font-size: 20px;
+  margin-right: 16px;
+  color: var(--accent-color);
+}
+.faq-toggle {
+  font-size: 16px;
+  margin-left: auto;
+  color: var(--default-color);
+}
+
+.faq-item h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--heading-color);
+  transition: color 0.3s ease;
+}
+
+.faq-item h3:hover{
+    color: var(--accent-color);
+}
+
+.faq-item input:checked + .faq-question h3 {
+  color: var(--accent-color)
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 20px;
+}
+
+.faq-answer p {
+  margin: 20px 0;
+  font-size: 15px;
+  color: var(--default-color);
+  transition: max-height 0.5s ease, padding 0.3s ease;
+}
+
+.faq-item input:checked ~ .faq-answer {
+  max-height: 200px;
+}
+
+.faq-item input:checked + .faq-question .faq-toggle {
+  transform: rotate(90deg);
 }
