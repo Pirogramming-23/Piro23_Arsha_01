@@ -122,6 +122,8 @@
     --accent-color: #47b2e4;
     --surface-color: #ffffff;
     --contrast-color: #ffffff;
+    --heading-font: "Jost", sans-serif;
+    --nav-font: "Poppins", sans-serif;
 }
 *,::after,::before{
     box-sizing:border-box}
@@ -219,8 +221,79 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* All일 때 모두 보임 */
+/* 초기 상태 - masonry-item이 애니메이션 가능하도록 설정 */
+.masonry-item {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    overflow: hidden;
+}
 
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* App/Card/Web 아닌 항목들 숨기기 */
+#filter-app:checked ~ .masonry-container .masonry-item:not(.app),
+#filter-card:checked ~ .masonry-container .masonry-item:not(.card),
+#filter-web:checked ~ .masonry-container .masonry-item:not(.web) {
+    opacity: 0;
+    transform: scale(0.95);
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+}
+
+/* All일 때 전체 보이게 (명시적으로 표현) */
+#filter-all:checked ~ .masonry-container .masonry-item {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: auto;
+    position: relative;
+}
+
+/* 필터 버튼 UI 스타일 */
+.filter-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.filter-buttons input[type="radio"] {
+    display: none;
+}
+
+.filter-buttons label {
+    cursor: pointer;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-buttons input[type="radio"]:checked + label {
+    background: #3db5ec;
+    color: #fff;
+}
+
+/* 선택된 필터 버튼 색상 강조 */
 #filter-all:checked ~ .filter-wrapper label[for="filter-all"],
 #filter-app:checked ~ .filter-wrapper label[for="filter-app"],
 #filter-card:checked ~ .filter-wrapper label[for="filter-card"],
@@ -229,48 +302,13 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
-
-#filter-all:checked ~ .masonry-container .masonry-item {
-    display: block;
-}
-
-/* App만 보이게 */
-#filter-app:checked ~ .masonry-container .masonry-item:not(.app),
-#filter-card:checked ~ .masonry-container .masonry-item:not(.card),
-#filter-web:checked ~ .masonry-container .masonry-item:not(.web) {
-    display: none;
-}
-.filter-wrapper{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 2rem 0;
-}
-.filter-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 1rem;
-    }
-.filter-buttons input[type="radio"] {
-    display: none;
-    }
-.filter-buttons label {
-    cursor: pointer;
-    padding: 6px 16px;
-    border-radius: 20px;
-    background: transparent;
-    }
-    .filter-buttons input[type="radio"]:checked + label {
-    background: #3db5ec;
-    color: #fff;
-    }
-
-.masonry-container{
+/* masonry 레이아웃 설정 */
+.masonry-container {
     column-count: 3;
     column-gap: 1.5rem;
     margin: 0 30px 0 30px;
 }
+
 .masonry-item{
     display: block;
     margin-bottom: 40px;
@@ -279,8 +317,15 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1.5rem;
     background: #fff;
     overflow: hidden;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
-
+.masonry-item.hide {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
 .masonry-item img {
     width: 100%;
     height: auto;
@@ -298,11 +343,18 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     padding: 1rem;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.info > div:last-child{
+    display: flex;
+    gap: 0.5rem;
 }
 
 .masonry-item:hover .info{
     opacity: 1;
+    transform: translateY(0);
 }
 
 .masonry-item .text h4 {
@@ -319,7 +371,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .masonry-item.icons{
     display: flex;
-    gap: 20px;
+    gap: 0.5rem;
+    align-items: center;
 }
 .masonry-item .icons a{
     margin-left: 0.5rem;
@@ -335,6 +388,7 @@ h1, h2, h3, h4, h5, h6 {
 .zoom{
     cursor: pointer;
     font-size: 1.5rem;
+    color:gray;
 }
 
 .zoom-icon {
@@ -398,16 +452,25 @@ h1, h2, h3, h4, h5, h6 {
 /* 닫기 영역 */
 .lightbox .close {
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 30px;
-    width: 35px;
-    height: 35px;
-    /* background-color: rgba(0, 0, 0, .32); */
-    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(26, 26, 26, 0.1);
     text-decoration: none;
     z-index: 1000;
 }
-.lightbox .close svg{
+.lightbox .close img {
+    width: 28px;  /* 원하는 크기로 조절 */
+    height: 28px;
+    filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
+
+}
+
+.lightbox .close:hover img {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+/* .lightbox .close svg{
     display: block;
 }
 .lightbox .close svg path{
@@ -415,7 +478,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .lightbox .close:hover svg path{
     fill: white;
-}
+} */
 
 .lightbox-content{
     position: relative;
@@ -440,9 +503,12 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 4px;
     z-index: 99999;
 }
-.slide-nav svg{
-    display: block;
+.slide-nav img{
+    width: 28px;  /* 원하는 크기로 조절 */
+    height: 28px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
+
 .slide-nav:hover {
     background: rgba(255, 255, 255, 0.1);
 }
@@ -451,9 +517,16 @@ h1, h2, h3, h4, h5, h6 {
 .slide-nav.prev {
     left: 20px;
 }
-
+.slide-nav.prev.first{
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(15%) contrast(100%);
+}
+.slide-nav.prev.first:hover{
+}
 .slide-nav.next {
     right: 20px;
+}
+.slide-nav.next.last{
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(15%) contrast(100%);
 }
 .gdesc-inner {
     background: #fff;
