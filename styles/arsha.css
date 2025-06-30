@@ -199,7 +199,7 @@ h1, h2, h3, h4, h5, h6 {
     margin: auto;
 }
 .section-title h2::after{
-        content: "";
+    content: "";
     position: absolute;
     display: block;
     width: 60px;
@@ -272,13 +272,13 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 30px 0 30px;
 }
 .masonry-item{
+    display: block;
+    margin-bottom: 40px;
     position: relative;
     break-inside: avoid;
     margin-bottom: 1.5rem;
     background: #fff;
-    /* border-radius: 8px; */
     overflow: hidden;
-    /* box-shadow: 0 4px 12px rgba(0,0,0,0.1); */
 }
 
 .masonry-item img {
@@ -337,6 +337,21 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5rem;
 }
 
+.zoom-icon {
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease;
+    /* 기본 색상 (예: 회색) */
+    filter: invert(28%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(90%);
+}
+.zoom:hover .zoom-icon{
+    filter: invert(21%) sepia(90%) saturate(6000%) hue-rotate(270deg) brightness(95%) contrast(100%);
+
+}
+.link:hover .zoom-icon {
+  /* 호버 시 보라색으로 변경 */
+    filter: invert(21%) sepia(90%) saturate(6000%) hue-rotate(270deg) brightness(95%) contrast(100%);
+}
 .gallery img {
     width: 200px;
     cursor: pointer;
