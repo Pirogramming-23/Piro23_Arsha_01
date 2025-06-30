@@ -466,7 +466,7 @@ li {
   font-weight: 400;
   font-family: var(--heading-font);
   text-align: left;
-  margin: 0 0 20px;
+  margin: 0 0 15px;
 }
 
 .pricing-member span {
@@ -490,7 +490,7 @@ li {
 
 .pricing-member ul li {
     font-size: 14px;
-    padding: 10px 0;
+    padding: 13px 0;
     display: flex;
     align-items: center;
     color: var(--default-color);
@@ -836,7 +836,8 @@ li {
 
 .faq-answer p {
   margin: 20px 0;
-  font-size: 15px;
+  font-size: 18px;
+  text-align: left;
   color: var(--default-color);
   transition: max-height 0.5s ease, padding 0.3s ease;
 }
