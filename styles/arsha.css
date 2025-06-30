@@ -263,7 +263,7 @@ body{
     vertical-align: middle;
     overflow: clip;
 }
-.section-title {
+.section-title-jhs {
     text-align: center;
     padding-bottom: 60px;
     position: relative;
@@ -274,7 +274,7 @@ body{
     min-width: 0;
 }
 
-.section-title h2 {
+.section-title-jhs h2 {
     font-size: 32px;
     font-weight: 700;
     margin-bottom: 20px;
@@ -284,7 +284,7 @@ body{
     font-family: var(--heading-font);
 }
 
-.section-title h2:before {
+.section-title-jhs h2:before {
     content: "";
     position: absolute;
     display: block;
@@ -297,7 +297,7 @@ body{
     margin: auto;
 }
 
-.section-title h2::after {
+.section-title-jhs h2::after {
     content: "";
     position: absolute;
     display: block;
