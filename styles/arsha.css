@@ -464,7 +464,7 @@ li {
 }
 
 .pricing-member span {
-  color: var(--default-color);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
   font-size: 18px;
 }
 
@@ -513,10 +513,12 @@ li {
   transition: background-color 0.3s;
 }
 
-.pricing-member button:nth-of-type(2){
+.pricing-member.featured button {
   background-color: var(--accent-color);
   color: var(--bs-body-bg);
+  border: 1px solid var(--accent-color);
 }
+
 
 .pricing-member button:hover {
   background-color: var(--accent-color);
@@ -648,9 +650,7 @@ li {
   transition: background 0.3s ease-in-out;
 }
 
-.testimonial-dots .dot.active {
-  background: var(--accent-color);
-}
+
 
 .quote-icon-left,
 .quote-icon-right {
@@ -660,14 +660,34 @@ li {
   margin: 0 5px;
 }
 
+@keyframes dotActive {
+  0%, 12.4% {
+    background: var(--accent-color);
+  }
+  12.5%, 100% {
+    background: #ccc;
+  }
+}
+
+.testimonial-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+  animation: dotActive 64s linear infinite;
+}
+
 .testimonial-dots .dot1 { animation-delay: 0s; }
-.testimonial-dots .dot2 { animation-delay: 5s; }
-.testimonial-dots .dot3 { animation-delay: 10s; }
-.testimonial-dots .dot4 { animation-delay: 15s; }
-.testimonial-dots .dot5 { animation-delay: 20s; }
-.testimonial-dots .dot6 { animation-delay: 25s; }
-.testimonial-dots .dot7 { animation-delay: 30s; }
-.testimonial-dots .dot8 { animation-delay: 35s; }
+.testimonial-dots .dot2 { animation-delay: 8s; }
+.testimonial-dots .dot3 { animation-delay: 16s; }
+.testimonial-dots .dot4 { animation-delay: 24s; }
+.testimonial-dots .dot5 { animation-delay: 32s; }
+.testimonial-dots .dot6 { animation-delay: 40s; }
+.testimonial-dots .dot7 { animation-delay: 48s; }
+.testimonial-dots .dot8 { animation-delay: 56s; }
+
 
 .testimonial-slider {
   overflow: hidden;
@@ -678,46 +698,16 @@ li {
 
 
 @keyframes slideAnimation {
-
-  0%,
-  12% {
-    transform: translateX(0%);
-  }
-
-  12.5%,
-  24.5% {
-    transform: translateX(-100%);
-  }
-
-  25%,
-  37% {
-    transform: translateX(-200%);
-  }
-
-  37.5%,
-  49.5% {
-    transform: translateX(-300%);
-  }
-
-  50.0%,
-  62.0% {
-    transform: translateX(-400%);
-  }
-
-  62.5%,
-  74.5% {
-    transform: translateX(-500%);
-  }
-
+  0%, 12% {transform: translateX(0%); }
+  12.5%, 24.5% {transform: translateX(-100%);}
+  25%, 37% {transform: translateX(-200%);}
+  37.5%, 49.5% { transform: translateX(-300%); }
+  50.0%,62.0% { transform: translateX(-400%);}
+  62.5%, 74.5% {transform: translateX(-500%); }
   75%, 87% {transform: translateX(-600%);}
   87.5%, 99.5% { transform: translateX(-700%);}
 }
 
-
-@keyframes dot {
-  0%, 4.9% { background: var(--accent-color); }
-  5%, 100% { background: #ccc; }
-}
 
 .slider:hover .testimonial-track,
 .slider:hover .dot {
