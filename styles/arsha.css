@@ -1347,8 +1347,8 @@ section, .section {
 }
 
 .cta-btn:hover {
-    background-color: white;
-    color: #0056b3;
+    background: var(--accent-color);
+    border: 2px solid var(--accent-color);
 }
 
 
@@ -3248,4 +3248,36 @@ footer {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+.footer-column2 ul, .footer-column3 ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    padding-left: 0 !important;
+    unicode-bidi: isolate;
+}
+
+.scroll-top {
+    position: fixed;
+    visibility: visible;
+    opacity: 1;
+    bottom: 15px;
+    right: 15px;
+    bottom: 15px;
+    z-index: 99999;
+    background-color: var(--accent-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50px;
+    transition: all 0.4s;
+    align-items: center !important;
+    justify-content: center !important;
+    display: flex !important;
+}
+.scroll-top svg {
+    font-size: 24px;
+    color: var(--contrast-color);
+    line-height: 0;
 }
