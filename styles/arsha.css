@@ -992,6 +992,10 @@ section, .section {
     min-height: 300px;
     margin: 0 auto;
 }
+.services-grid a:hover {
+    translate: ;
+}
+
 
 .service-item {
     background: #fff;
@@ -1069,20 +1073,21 @@ section, .section {
 
 
 .step-card {
-    background: #fff;
+    background: var(--surface-color);
+    border-radius: 20px;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
     width: 360px; /* 기존 320px → 더 크게 */
     padding: 24px 20px; /* 내부 여백 추가 */
-    border-radius: 16px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    box-shadow: 0 5px 20px color-mix(in srgb, var(--default-color), transparent 92%);
     overflow: hidden;
     position: relative;
-    transition: transform 0.3s ease;
 }
 
 /* 변경: .card:hover → .step-card:hover */
 .step-card:hover {
-  transform: translateY(-100px); /* 살짝 위로 */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* 그림자 강화 */
+  transform: translateY(-10px); /* 살짝 위로 */
+  box-shadow: 2px 2px 2px 2px color-mix(in srgb, var(--accent-color), transparent 85%);
 }
 .card-image {
     width: 100%;
@@ -1365,12 +1370,6 @@ section, .section {
     }
 }
 
-/* .fade-up {
-    animation: fadeUp ease-out both;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
-} */
-
 .fade-up {
     opacity: 0;
     transform: translateY(30px);
@@ -1572,6 +1571,9 @@ section, .section {
     color: var(--heading-color);
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+#navmenu.navmenu i {
+    display: none;
 }
 .navmenu {
     padding: 0;
