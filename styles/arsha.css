@@ -150,8 +150,11 @@ body{
     background: white url(../img/demo-bg.jpg) 0 0 repeat;
     position:relative;
     font-family: var(--default-font);
+    scroll-behavior: smooth;
 }
-
+body:has(.lightbox:target){
+    overflow: hidden;
+}
 h1, h2, h3, h4, h5, h6 {
     color: var(--heading-color);
     font-family: var(--heading-font);
@@ -202,8 +205,7 @@ a {
 i {
     font-style: italic;
 }
-
-#header {
+#header{
     position:absolute;
     left:0;
     right:0;
@@ -236,6 +238,8 @@ section, .section {
     padding-left: calc(var(--bs-gutter-x) * .5);
     margin-right: auto;
     margin-left: auto;
+    column-gap: 1.5rem;
+    row-gap: 0;
 }
 
 .section-title h2 {
@@ -701,6 +705,14 @@ section, .section {
     margin-top: calc(-1 * var(--bs-gutter-y));
     margin-right: calc(-.5 * var(--bs-gutter-x));
     margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
 }
 
 /* header */
@@ -1224,4 +1236,412 @@ section, .section {
     padding-right: calc(var(--bs-gutter-x) * .5);
     padding-left: calc(var(--bs-gutter-x) * .5);
     margin-top: var(--bs-gutter-y);
+}
+
+.portfolio .portfolio-filters {
+    padding: 0;
+    margin: 0 auto 20px auto;
+    list-style: none;
+    text-align: center;
+}
+
+
+/* 초기 상태 - masonry-item이 애니메이션 가능하도록 설정 */
+.masonry-item {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    overflow: hidden;
+}
+
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* App/Card/Web 아닌 항목들 숨기기 */
+#filter-app:checked ~ .masonry-container .masonry-item:not(.app),
+#filter-card:checked ~ .masonry-container .masonry-item:not(.card),
+#filter-web:checked ~ .masonry-container .masonry-item:not(.web) {
+    opacity: 0;
+    transform: scale(0.95);
+    visibility: hidden;
+    pointer-events: none;
+    position: absolute;
+}
+
+/* All일 때 전체 보이게 (명시적으로 표현) */
+#filter-all:checked ~ .masonry-container .masonry-item {
+    opacity: 1;
+    transform: scale(1);
+    visibility: visible;
+    pointer-events: auto;
+    position: relative;
+}
+
+/* 필터 버튼 UI 스타일 */
+.filter-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.filter-buttons input[type="radio"] {
+    display: none;
+}
+
+.filter-buttons label {
+    cursor: pointer;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-buttons input[type="radio"]:checked + label {
+    background: #3db5ec;
+    color: #fff;
+}
+
+/* 선택된 필터 버튼 색상 강조 */
+#filter-all:checked ~ .filter-wrapper label[for="filter-all"],
+#filter-app:checked ~ .filter-wrapper label[for="filter-app"],
+#filter-card:checked ~ .filter-wrapper label[for="filter-card"],
+#filter-web:checked ~ .filter-wrapper label[for="filter-web"] {
+    background: #3db5ec;
+    color: #fff;
+}
+
+/* masonry 레이아웃 설정 */
+.masonry-container {
+    column-count: 3;
+    column-gap: 1.5rem;
+    margin: 0 95px 0 95px;
+}
+
+.masonry-item{
+    display: block;
+    margin-bottom: 40px;
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 1.5rem;
+    background: #fff;
+    overflow: hidden;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+.masonry-item.hide {
+    opacity: 0;
+    transform: scale(0.95);
+    pointer-events: none;
+}
+.masonry-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.masonry-item .info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9); /* 흰 배경에 살짝 투명 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.info > div:last-child{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.masonry-item:hover .info{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.masonry-item .text h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #2c3e50;
+}
+
+.masonry-item .text p {
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+.masonry-item.icons{
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.masonry-item .icons a{
+    margin-left: 0.5rem;
+    color: #333;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+.masonry-item {
+    display: block;
+    margin-bottom: 40px;
+}
+.masonry-item.icons img{
+    filter: invert(38%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
+}
+.zoom{
+    cursor: pointer;
+    font-size: 1.5rem;
+    color:gray;
+}
+
+.zoom-icon {
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s ease;
+    /* 기본 색상 (예: 회색) */
+    filter: invert(28%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(90%) contrast(90%);
+}
+.zoom:hover .zoom-icon{
+    filter: invert(69%) sepia(76%) saturate(522%) hue-rotate(176deg) brightness(96%) contrast(96%);
+}
+.link:hover .zoom-icon {
+    filter: invert(69%) sepia(76%) saturate(522%) hue-rotate(176deg) brightness(96%) contrast(96%);
+}
+.gallery img {
+    width: 200px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* 라이트박스 스타일 */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    /* overflow-y: auto; */
+    flex-direction: column;
+}
+
+
+.lightbox img {
+    max-height: 95vh;
+    max-width: 100%;
+    /* border-radius: 8px; */
+    display: block;
+}
+
+/* :target으로 열림 처리 */
+.lightbox:target {
+    display: flex;    
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+/* 닫기 영역 */
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(26, 26, 26, 0.1);
+    text-decoration: none;
+    z-index: 1000;
+}
+.lightbox .close img {
+    width: 28px;  /* 원하는 크기로 조절 */
+    height: 28px;
+    filter: invert(40%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(90%) contrast(90%);
+
+}
+
+.lightbox .close:hover img {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+/* .lightbox .close svg{
+    display: block;
+}
+.lightbox .close svg path{
+    fill: #aaa;
+}
+.lightbox .close:hover svg path{
+    fill: white;
+} */
+
+.lightbox-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* prev button & next button */
+.slide-nav{
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: none;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    z-index: 99999;
+}
+.slide-nav img{
+    width: 28px;  /* 원하는 크기로 조절 */
+    height: 28px;
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.slide-nav:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* 위치 조정 */
+.slide-nav.prev {
+    left: 20px;
+}
+.slide-nav.prev.first{
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(15%) contrast(100%);
+}
+.slide-nav.prev.first:hover{
+}
+.slide-nav.next {
+    right: 20px;
+}
+.slide-nav.next.last{
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(15%) contrast(100%);
+}
+.gdesc-inner {
+    background: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: left;
+    font-family: sans-serif;
+    border-top: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.gslide-title {
+    font-size: 1rem;
+    color: #111;
+    margin: 0;
+    line-height: 1.5;
+}
+.link{
+    font-size: 2rem;
+}
+
+#preview {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 32px;
+    bottom: 0;
+    transition: all .2s;
+}
+iframe#demo-frame {
+    display: block;
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ccc;
+}
+
+.page-title {
+    --background-color: 
+    color-mix(in srgb, var(--default-color), transparent 96%);
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 40px 0;
+    position: relative;
+}
+.page-title .container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.breadcrumbs ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+}
+
+.breadcrumbs li {
+    color: #6c757d;
+}
+
+.breadcrumbs li + li::before {
+    content: "/";
+    padding: 0 8px;
+    color: #6c757d;
+}
+
+.breadcrumbs li a {
+    text-decoration: none;
+    color: #0d6efd; /* Bootstrap 기본 파랑 */
+}
+
+.breadcrumbs li a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumbs li.current {
+    color: #212529;
+    font-weight: 600;
+}
+
+.page-title h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.portfolio-details{
+    padding: 40px 0;
 }
