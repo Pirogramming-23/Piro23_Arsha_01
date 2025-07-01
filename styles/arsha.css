@@ -3284,3 +3284,286 @@ footer {
     line-height: 0;
 }
  
+
+ /* section About */
+  .section-title-ygc {
+    text-align: center;
+    padding-bottom: 60px;
+    position: relative;
+}
+.section-title-ygc h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+    color: var(--heading-color) !important;
+}
+.section-title-ygc h2:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background:      color-mix(in srgb, var(--default-color), transparent 60%);
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
+}
+.section-title-ygc h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.about-row-flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0;
+    flex-wrap: wrap;
+}
+.container-content-left {
+  width: 570px;
+  height: 185px;
+  margin: 24px 0 0 0;
+  padding: 0 12px;
+}
+.container-content-left p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.container-content-left li svg {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+    color: #47b2e4;
+    width: 20px;
+    height: 20px;
+    padding: 0 4px 0 0;
+}
+.container-content-right {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 24px 0 0 0;
+  padding: 0 12px;
+}
+.container-content-right p{
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.container-content-left ul {
+    list-style: none;
+    padding-left: 0;
+}
+.container-content-right .read-more {
+    color: var(--accent-color);
+    font-family: var(--heading-font);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+    padding: 8px 28px;
+    border-radius: 5px;
+    transition: 0.3s;
+    display: inline-flex;
+    align-self: flex-start;
+    justify-content: center;
+    border: 2px solid var(--accent-color);
+}
+.container-content-right .read-more:hover {
+    background: var(--accent-color);
+    color:#ffffff;
+}
+.container-content-right img {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: -.125em;
+    -webkit-font-smoothing: antialiased;
+}
+.read-more:hover .arrow-icon {
+    stroke: var(--accent-color);
+  }
+@keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-up {
+    animation: fadeUp 1s ease-out forwards;
+    opacity: 0;
+  }
+  /* why-us */
+.why-us {
+    display: flex;
+}
+.why-us-container {
+    margin: 24px 0 0 0;
+    padding: 0 12px;
+}
+.why-us-content {
+    padding: 0 48px;
+    font-family: var(--default-font);
+    color: #37517e;
+}
+.why-us-content h3 {
+    font-weight: 400;
+    font-size: 34px;
+}
+.why-us-content h3 strong {
+    font-weight: bolder;
+}
+.why-us-content p {
+    color: color-mix(in srgb, var(--default-color), transparent 30%);
+    margin: 0 0 16px 0;
+}
+.faq-container {
+    padding: 0 48px;
+}
+.faq-item-ygc {
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.faq-item-ygc h3{
+    position: relative;
+    font-size: 17px;
+    margin: 0 30px 0 0;
+    cursor: pointer;
+    color: #37517e;
+}
+.faq-item-ygc h3:hover {
+    color: var(--accent-color);
+}
+.faq-item-ygc h3 span {
+    color: var(--accent-color);
+}
+.faq-item-ygc h3 svg {
+    position: absolute;
+    right: 0;
+}
+
+/* .faq-toggle {
+  display: none;
+} */
+.faq-content {
+  opacity: 0;
+  transform: translateY(-10px);
+  max-height: 0;
+  pointer-events: none;
+  transition: max-height 0.7s ease, opacity 0.7s ease, transform 0.7s ease;
+  overflow: hidden;
+  font-size: 16px;
+  color: #444444;
+  padding: 0 2px;
+}
+.faq-toggle:checked + .faq-question-ygc + .faq-content {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 500px;
+  pointer-events: auto;
+}
+
+.faq-toggle:checked ~ .faq-content {
+  max-height: 300px;
+  padding-top: 15px;
+}
+.faq-item-ygc .expanded-icon {
+    display: none;
+  }
+.faq-toggle:checked + .faq-question-ygc .collapsed-icon {
+    display: none;
+}
+.faq-toggle:checked + .faq-question-ygc .expanded-icon {
+    display: inline;
+}  
+.faq-toggle:checked + .faq-question-ygc + .faq-content {
+    max-height: 200px;
+    opacity: 1;
+}
+.faq-question-ygc {
+    cursor: pointer;
+    display: block;
+}
+.why-us-img {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    margin: 24px 0 0 0;
+    padding: 0 12px;
+}
+.why-us-img img {
+    width: 436px;
+    height: 327px;
+}
+/* section skills */
+.skills .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+.col-left, .col-right {
+    flex: 1 1 45%;
+}
+.skills .container h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #37517e;
+    font-family: var(--heading-font);
+    margin-bottom: 8px;
+}
+.fst-italic {
+    color: color-mix(in srgb, #37517e, transparent 30%);
+    font-style: italic !important;
+    margin-bottom: 16px;
+}
+.skills-content .progress {
+    margin-bottom: 20px;
+}
+.skill-label {
+    font-size: 12px;
+    font-family: "Jost",sans-serif;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.progress-bar-wrap {
+    background: #e0e0e0;
+    overflow: hidden;
+    height: 10px;
+}
+.progress-bar {
+    height: 10px;
+    background-color: #37517e;
+    transition: width 1s ease-in-out;
+}
